@@ -46,6 +46,7 @@ header h1 a img {
 }
 
 header #nav-menu-toggle {
+  outline: none;
   position: relative;
   width: 27px;
 }
