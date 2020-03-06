@@ -15,4 +15,5 @@ $(document).ready(function () {
 
 $("#nav-menu-toggle").on("click", () => {
     $("#nav-menu-toggle").toggleClass("active");
+    $("nav").toggleClass("active");
 })

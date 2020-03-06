@@ -65,8 +65,15 @@ header{
 
 nav{
     background: $kp-darkgreen;
+    &.active > ul{
+        max-height: 400px;
+        opacity: 1;
+    }
     ul{
-        height: 100%;
+        transition: .3s ease-in-out;
+        max-height: 4px;
+        overflow-y: hidden;
+        opacity: 0;
         padding: 4px 0 0 0;
         margin: 0;
         list-style: none;
