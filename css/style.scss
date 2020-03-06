@@ -205,6 +205,9 @@ div.section-block{
             background: rgba(255, 172, 12, .8);
             border-radius: 50%;
             cursor: pointer;
+            &:hover{
+                background: $kp-orange;
+            }
         }
     }
 
@@ -214,6 +217,11 @@ div.section-block{
         height: 125px;
         position: relative;
         display: flex;
+        &:hover{
+            &:after{
+                background: $kp-lightgreen;
+            }
+        }
         &:after{
             content: "";
             background: $kp-orange;
@@ -250,11 +258,16 @@ div.section-block{
         background-image: image-set( "../image/video/pri_bg.png" 1x, "../image/video/pri_bg@2x.png" 2x, "../image/video/pri_bg@3x.png" 3x);
     }
 
-    .link-block{
-
-        
+    a.link-block{
+        height: auto;
+        img {
+            height: auto;
+            width: 100%;
+            display: block;
+            border: 4px solid $kp-darkgreen;
+        }
     }
-    #gtms-link-block{ grid-area: gtm;}
+    #gtms-link-block{ grid-area: gtm; }
     #kppkpe-link-block{ grid-area: kpp; }
     #gehs-link-block{ grid-area: geh; }
 }

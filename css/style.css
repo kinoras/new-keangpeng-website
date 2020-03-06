@@ -261,6 +261,10 @@ div.section-block div.content {
   cursor: pointer;
 }
 
+#section-video-block #video-block .play-button-block:hover {
+  background: #ffac0c;
+}
+
 #section-video-block .gallery-block {
   background-size: cover;
   background-position: center center;
@@ -269,6 +273,10 @@ div.section-block div.content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#section-video-block .gallery-block:hover:after {
+  background: #61ab00;
 }
 
 #section-video-block .gallery-block:after {
@@ -325,6 +333,17 @@ div.section-block div.content {
   grid-area: pri;
   background-image: -webkit-image-set(url("../image/video/pri_bg.png") 1x, url("../image/video/pri_bg@2x.png") 2x, url("../image/video/pri_bg@3x.png") 3x);
   background-image: image-set("../image/video/pri_bg.png" 1x, "../image/video/pri_bg@2x.png" 2x, "../image/video/pri_bg@3x.png" 3x);
+}
+
+#section-video-block a.link-block {
+  height: auto;
+}
+
+#section-video-block a.link-block img {
+  height: auto;
+  width: 100%;
+  display: block;
+  border: 4px solid #009A16;
 }
 
 #section-video-block #gtms-link-block {
