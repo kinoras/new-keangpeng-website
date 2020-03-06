@@ -15,11 +15,21 @@ body {
 }
 
 header {
+  height: 90px;
   background: white;
-  padding: 19px 18px;
+  margin: 0 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header h1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0;
   height: 53px;
 }
@@ -35,11 +45,53 @@ header h1 a img {
   height: 53px;
 }
 
+header #nav-menu-toggle {
+  position: relative;
+  width: 27px;
+}
+
+header #nav-menu-toggle .nav-menu-toggle-child {
+  background: #009A16;
+  height: 3px;
+  width: 27px;
+  position: absolute;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+header #nav-menu-toggle .nav-menu-toggle-child:nth-child(1) {
+  -webkit-transform: translateY(-9px);
+          transform: translateY(-9px);
+}
+
+header #nav-menu-toggle .nav-menu-toggle-child:nth-child(3) {
+  -webkit-transform: translateY(9px);
+          transform: translateY(9px);
+}
+
+header #nav-menu-toggle.active .nav-menu-toggle-child:nth-child(1) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+header #nav-menu-toggle.active .nav-menu-toggle-child:nth-child(2) {
+  opacity: 0;
+}
+
+header #nav-menu-toggle.active .nav-menu-toggle-child:nth-child(3) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+nav {
+  background: #009A16;
+}
+
 nav ul {
+  height: 100%;
   padding: 4px 0 0 0;
   margin: 0;
   list-style: none;
-  background: #009A16;
 }
 
 nav ul li {

@@ -22,9 +22,13 @@ body{
 }
 
 header{
+    height: 90px;
     background: white;
-    padding: 19px 18px;
+    margin: 0 19px;
+    display: flex;
+    align-items: center;
     h1{
+        flex: 1;
         margin: 0;
         height: 53px;
         a{
@@ -37,14 +41,35 @@ header{
             }
         }
     }
+    #nav-menu-toggle{
+        position: relative;
+        width: 27px;
+        .nav-menu-toggle-child{
+            background: $kp-darkgreen;
+            height: 3px;
+            width: 27px;
+            position: absolute;
+            transition: .3s ease-in-out;
+            &:nth-child(1){ transform: translateY(-9px); }
+            &:nth-child(3){ transform: translateY(9px); }
+        }
+        &.active{
+            .nav-menu-toggle-child{
+                &:nth-child(1){ transform: rotate(-45deg); }
+                &:nth-child(2){ opacity: 0; }
+                &:nth-child(3){ transform: rotate(45deg); }
+            }
+        }
+    }
 }
 
 nav{
+    background: $kp-darkgreen;
     ul{
+        height: 100%;
         padding: 4px 0 0 0;
         margin: 0;
         list-style: none;
-        background: $kp-darkgreen;
         li{
             height: 46px;
             padding: 0 13.51px;

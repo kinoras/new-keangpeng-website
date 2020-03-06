@@ -3,12 +3,16 @@ $(document).ready(function () {
         loop: true,
     
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
         
         autoplay: {
             delay: 3000,
         },
-      })
-  });
+    })
+});
+
+$("#nav-menu-toggle").on("click", () => {
+    $("#nav-menu-toggle").toggleClass("active");
+})
