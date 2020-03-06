@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        #swiper-slide-1{ background-image: url("image/swiper/cover1.jpg"); }
+        #swiper-slide-2{ background-image: url("image/swiper/cover2.jpg"); }
+        #swiper-slide-3{ background-image: url("image/swiper/cover4.jpg"); }
+    </style>
+    <title>澳門鏡平學校</title>
 </head>
 <body>
-    
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="image/logo/keangpeng.png"
+                     alt="澳門鏡平學校 Keang Peng School"
+                     srcset="image/logo/keangpeng@2x.png 2x, image/logo/keangpeng@2x.png 3x" />
+            </a>
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="active"><a href="#">首頁</a></li>
+            <li><a href="#">學校新聞</a></li>
+            <li><a href="#">學校介紹</a></li>
+            <li><a href="#">學校沿革</a></li>
+            <li><a href="#">辦學宗旨</a></li>
+            <li><a href="#">校訓學風教風</a></li>
+            <li><a href="#">行政架構</a></li>
+            <li><a href="#">聯繫我們</a></li>
+        </ul>
+    </nav>
+    <div class="swiper-container" id="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="swiper-slide-1">
+                <div class="content">
+                    <h2><span class="title">校訓：</span>誠、毅、精、博</h2>
+                </div>
+            </div>
+            <div class="swiper-slide" id="swiper-slide-2">
+                <div class="content">
+                    <h2><span class="title">學風：</span>尊師、善學、求實、創新</h2>
+                </div>
+            </div>
+            <div class="swiper-slide" id="swiper-slide-3">
+                <div class="content">
+                    <h2><span class="title">教風：</span>敬業愛生、科教育才</h2>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <main>
+        <div class="section-block" id="section-video-block">
+            <div class="title">
+                <h3>鏡平視頻</h3>
+            </div>
+            <div class="content">
+                <div id="video-block"></div>
+                <div id="sec-gallery-block" class="gallery-block"></div>
+                <div id="pri-gallery-block" class="gallery-block"></div>
+                <div id="gtms-link-block" class="link-block"></div>
+                <div id="kppkpe-link-block" class="link-block"></div>
+                <div id="gehs-link-block" class="link-block"></div>
+            </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
