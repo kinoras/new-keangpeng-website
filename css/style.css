@@ -136,7 +136,7 @@ nav ul li a::after {
 }
 
 nav ul li.active {
-  background: #FFAC0C;
+  background: #ffac0c;
 }
 
 nav ul li.active a {
@@ -160,7 +160,7 @@ nav ul li:first-child a {
 #swiper {
   width: 100vw;
   height: 51vw;
-  border-bottom: 4px solid #FFAC0C;
+  border-bottom: 4px solid #ffac0c;
 }
 
 #swiper .swiper-slide {
@@ -210,11 +210,11 @@ div.section-block {
 div.section-block div.title {
   margin-bottom: 14.5px;
   padding-bottom: 2.5px;
-  border-bottom: 2px solid #61AB00;
+  border-bottom: 2px solid #61ab00;
 }
 
 div.section-block div.title h3 {
-  color: #61AB00;
+  color: #61ab00;
   font-size: 20px;
   line-height: 28px;
   margin: 0 2px;
@@ -228,32 +228,103 @@ div.section-block div.content {
   display: -ms-grid;
   display: grid;
   grid-gap: 14px;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
       grid-template-areas: "vid vid" "sec pri" "gtm gtm" "kpp kpp" "geh geh";
 }
 
 #section-video-block #video-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: vid;
+  height: 225px;
+  background-size: cover;
+  background-position: center center;
+  background-image: -webkit-image-set(url("../image/video/video_cover.png") 1x, url("../image/video/video_cover@2x.png") 2x, url("../image/video/video_cover@3x.png") 3x);
+  background-image: image-set("../image/video/video_cover.png" 1x, "../image/video/video_cover@2x.png" 2x, "../image/video/video_cover@3x.png" 3x);
+}
+
+#section-video-block #video-block .play-button-block {
+  height: 65px;
+  width: 65px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 172, 12, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#section-video-block .gallery-block {
+  background-size: cover;
+  background-position: center center;
+  height: 125px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#section-video-block .gallery-block:after {
+  content: "";
+  background: #ffac0c;
+  height: 100%;
+  width: 100%;
+  opacity: .75;
+  position: absolute;
+}
+
+#section-video-block .gallery-block a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  z-index: 1;
+}
+
+#section-video-block .gallery-block a img {
+  width: 70px;
+}
+
+#section-video-block .gallery-block a p {
+  margin: 8px 0 0 0;
+  color: white;
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 16px;
 }
 
 #section-video-block #sec-gallery-block {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: sec;
-  background-image: -webkit-image-set(url("image/video/sec_bg.png") 1x, url("image/video/sec_bg@2x.png") 2x, url("image/video/sec_bg@3x.png") 3x);
-  background-image: image-set("image/video/sec_bg.png" 1x, "image/video/sec_bg@2x.png" 2x, "image/video/sec_bg@3x.png" 3x);
+  background-image: -webkit-image-set(url("../image/video/sec_bg.png") 1x, url("../image/video/sec_bg@2x.png") 2x, url("../image/video/sec_bg@3x.png") 3x);
+  background-image: image-set("../image/video/sec_bg.png" 1x, "../image/video/sec_bg@2x.png" 2x, "../image/video/sec_bg@3x.png" 3x);
 }
 
 #section-video-block #pri-gallery-block {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: pri;
-  background-image: -webkit-image-set(url("image/video/pri_bg.png") 1x, url("image/video/pri_bg@2x.png") 2x, url("image/video/pri_bg@3x.png") 3x);
-  background-image: image-set("image/video/pri_bg.png" 1x, "image/video/pri_bg@2x.png" 2x, "image/video/pri_bg@3x.png" 3x);
+  background-image: -webkit-image-set(url("../image/video/pri_bg.png") 1x, url("../image/video/pri_bg@2x.png") 2x, url("../image/video/pri_bg@3x.png") 3x);
+  background-image: image-set("../image/video/pri_bg.png" 1x, "../image/video/pri_bg@2x.png" 2x, "../image/video/pri_bg@3x.png" 3x);
 }
 
 #section-video-block #gtms-link-block {
@@ -261,8 +332,6 @@ div.section-block div.content {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: gtm;
-  background-image: -webkit-image-set(url("image/video/gtms_bg.png") 1x, url("image/video/gtms_bg@2x.png") 2x, url("image/video/gtms_bg@3x.png") 3x);
-  background-image: image-set("image/video/gtms_bg.png" 1x, "image/video/gtms_bg@2x.png" 2x, "image/video/gtms_bg@3x.png" 3x);
 }
 
 #section-video-block #kppkpe-link-block {
