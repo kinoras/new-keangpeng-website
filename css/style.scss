@@ -5,6 +5,7 @@ $kp-orange: rgb(255, 172, 12);
 $kp-red: #DA4E35;
 $kp-grey: #707070;
 $kp-transparent: rgba(0,0,0,0);
+$kp-gold: #c8ae17;
 
 *{
     box-sizing: border-box;
@@ -33,11 +34,15 @@ header{
         height: 53px;
         a{
             text-decoration: none;
-            display: inline-block;
+            display: flex;
+            align-items: center;
             color: black;
             height: 53px;
-            img{
-                height: 53px;
+            img.icon{ height: 53px; }
+            img.motto{
+                display: none;
+                height: 25px;
+                margin-left: 12px;
             }
         }
     }
@@ -125,6 +130,7 @@ nav{
     width: 100vw;
     height: 51vw;
     border-bottom: 4px solid $kp-orange;
+    background: white;
     .swiper-slide{
         position: relative;
         background-size: cover;
@@ -139,21 +145,43 @@ nav{
             align-items: center;
             padding: 0 18px;
             background: rgba(97, 171, 0, .75); // $kp-lightgreen
-        }
-        h2{
-            font-size: 29px;
-            margin: 0;
-            color: white;
-            span.title{
-                padding-left: 0.5px;
-                font-size: 17px;
-                font-weight: 400;
-                line-height: 24px;
-                display: block;
+            h2{
+                font-size: 29px;
+                margin: 0;
+                color: white;
+                span.title{
+                    padding-left: 0.5px;
+                    font-size: 17px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    display: block;
+                }
             }
         }
     }
-    .swiper-button-prev, .swiper-button-next{ display: none; }
+    .swiper-button-prev, .swiper-button-next{
+        display: none;
+        width: 192px;
+        height: 100%;
+        top: 0;
+        margin: 0;
+        align-items: center;
+        &::after{ content: ""; }
+        img{
+            height: 113px;
+            width: 37px;
+        }
+    }
+    .swiper-button-prev{ 
+        left: 0;
+        justify-content: flex-start;
+        img{ margin-left: 30px; }
+    }
+    .swiper-button-next{
+        right: 0;
+        justify-content: flex-end;
+        img{ margin-right: 30px; }
+    }
 }
 
 div.section-block{
@@ -182,13 +210,10 @@ div.section-block{
         grid-template-areas:
             "vid vid"
             "sec pri"
-            "gtm gtm"
             "kpp kpp"
-            "geh geh";
+            "gtm geh";
     }
 
-    
-    
     #video-block{
         display: flex;
         align-items: center;
@@ -264,12 +289,19 @@ div.section-block{
             height: auto;
             width: 100%;
             display: block;
-            border: 4px solid $kp-darkgreen;
+            // border: 4px solid $kp-darkgreen;
+        }
+        &.link-box-cross-2{
+            height: 90px;
+            img{
+                height: 90px; 
+                object-fit: contain;
+            }
         }
     }
-    #gtms-link-block{ grid-area: gtm; }
+    #gtms-link-block{ grid-area: gtm; background: #195AC9;}
     #kppkpe-link-block{ grid-area: kpp; }
-    #gehs-link-block{ grid-area: geh; }
+    #gehs-link-block{ grid-area: geh; background: #AC0004;}
 }
 
 #section-news-block{
@@ -286,7 +318,6 @@ div.section-block{
         }
     }
     ul.content{
-        // 15.5
         padding: 0;
         list-style: none;
         li{
@@ -314,7 +345,7 @@ div.section-block{
                     height: 86px;
                 }
                 div.news-detail-block{
-                    margin: 0 4px 0 8px;
+                    margin: 0 2px 0 8px;
                     flex: 1;
                     h4{
                         font-size: 16px;
@@ -340,7 +371,7 @@ div.section-block{
         list-style: none;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 14.5px;
+        grid-gap: 16px;
         li{
             a{
                 display: flex;
@@ -363,7 +394,10 @@ div.section-block{
 }
 
 footer{
+    font-size: 12px;
     background: $kp-darkgreen;
+    display: flex;
+    flex-direction: column;
     color: white;
     margin-top: 30px;
     padding: 13px 15px;
@@ -378,6 +412,143 @@ footer{
                 text-decoration: none;
                 &:hover{ text-decoration: underline; }
             }
+        }
+    }
+}
+
+@media screen and ( min-width: 1280px ) {
+    header{
+        margin: 0 calc(50vw - 500px);
+        h1 a img.motto{ display: inline-block; }
+        #nav-menu-toggle{ display: none; }
+    }
+    nav{
+        background: $kp-darkgreen;
+        padding: 0 calc(50vw - 500px);
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            opacity: 1;
+            max-height: none;
+            padding: 0;
+            margin: 0;
+            li{
+                margin: 0 10px;
+                padding: 0;
+                height: 50px;
+                a{
+                    display: block;
+                    line-height: 30px;
+                    padding: 10px 8px;
+                    text-decoration: none;
+                    color: white;
+                    position: relative;
+                    &::after{ content: none; }
+                }
+                &.active{
+                    background: $kp-orange;
+                    a {
+                        border-top: 1px solid $kp-transparent;
+                        color: black;
+                        font-weight: 500;
+                        &::after{ border-color: black; }
+                    }
+                    + li > a{
+                        border-top: 1px solid $kp-transparent;
+                    }
+                }
+                &:first-child a { border-top: none !important; }
+            }
+        }
+    }
+    #swiper{
+        height: 450px;
+        border-bottom: 0px;
+        .swiper-slide{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .content{
+                display: flex;
+                position: relative;
+                height: 110px;
+                width: 1000px;
+                align-items: center;
+                border-left: 13px solid $kp-gold;
+                border-right: 13px solid $kp-gold;
+                padding: 15px;
+                h2{
+                    font-size: 62px;
+                    font-weight: 500;
+                    line-height: 79px;
+                    width: 100%;
+                    text-align: center;
+                    span.title{
+                        padding: 0;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        line-height: inherit;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        .swiper-button-prev, .swiper-button-next{ display: flex; }
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 calc(50vw - 500px);
+        grid-gap: 15px;
+        div.section-block{ margin: 0; }
+        #section-video-block{
+            .content{
+                #video-block{ height: 200px; }
+                .gallery-block{ height: 120px; }
+                a.link-block{
+                    height: 70px;
+                    img {
+                        height: 70px;
+                        object-fit: contain;
+                    }
+                    &.link-box-cross-2{
+                        height: 80px;
+                        img{ height: 80px; }
+                    }
+                }
+            }
+        }
+        #section-news-block{
+            ul.content{
+                li{
+                    a{ padding: 22.5px 0; }
+                }
+            }
+        }
+    }
+    footer{
+        flex-direction: row;
+        padding: 13px calc(50vw - 500px);
+        div.left-box{
+            display: grid;
+            grid-template-areas: "fpcpr fpsec fppri";
+            p{
+                margin: 0;
+                &#footer-para-sec{
+                    grid-area: fpsec;
+                    margin-left: 20px;
+                    &::after{
+                        content: "；";
+                    }
+                }
+                &#footer-para-pri{ grid-area: fppri; }
+                &#footer-para-cpr{ grid-area: fpcpr; }
+            }
+        }
+        p.link{
+            flex: 1;
+            text-align: right;
+            margin: 0;
         }
     }
 }

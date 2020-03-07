@@ -11,6 +11,10 @@ $(document).ready(function () {
             delay: 3000,
         },
     })
+
+    $(mySwiper.navigation.nextEl).html(`<img src="image/swiper/button/next.png" alt="下一張">`);
+    $(mySwiper.navigation.prevEl).html(`<img src="image/swiper/button/prev.png" alt="上一張">`);
+
 });
 
 $("#nav-menu-toggle").on("click", () => {
