@@ -291,6 +291,7 @@ div.section-block{
         list-style: none;
         li{
             a{
+                text-decoration: none;
                 padding: 15.5px 0;
                 display: flex;
                 border-bottom: 1px solid #CCCCCC;
@@ -313,7 +314,7 @@ div.section-block{
                     height: 86px;
                 }
                 div.news-detail-block{
-                    margin: 0 2px 0 8px;
+                    margin: 0 4px 0 8px;
                     flex: 1;
                     h4{
                         font-size: 16px;
