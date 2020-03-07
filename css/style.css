@@ -479,4 +479,36 @@ div.section-block .content {
 #section-link-block ul.content li a p {
   margin: 0 0 0 7px;
 }
+
+#section-link-block ul.content li.link-block-cross-2 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+}
+
+footer {
+  background: #009A16;
+  color: white;
+  margin-top: 30px;
+  padding: 13px 15px;
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0 0 4px 0;
+  line-height: 17px;
+}
+
+footer p.link {
+  color: #71C77B;
+}
+
+footer p.link a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p.link a:hover {
+  text-decoration: underline;
+}
 /*# sourceMappingURL=style.css.map */
