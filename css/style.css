@@ -446,4 +446,37 @@ div.section-block .content {
   margin: 1px 0 0 0;
   line-height: 16px;
 }
+
+#section-link-block ul.content {
+  padding: 0;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 14.5px;
+}
+
+#section-link-block ul.content li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+#section-link-block ul.content li a img {
+  height: 43px;
+  width: 43px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#section-link-block ul.content li a p {
+  margin: 0 0 0 7px;
+}
 /*# sourceMappingURL=style.css.map */
